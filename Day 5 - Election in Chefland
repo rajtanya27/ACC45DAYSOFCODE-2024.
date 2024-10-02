@@ -1,0 +1,14 @@
+def election_winner():
+    T = int(input())
+    for _ in range(T):
+        X_A, X_B, X_C = map(int, input().split())
+        if X_A > 50:
+            print("A")
+        elif X_B > 50:
+            print("B")
+        elif X_C > 50:
+            print("C")
+        else:
+            print("NOTA")
+
+election_winner()
