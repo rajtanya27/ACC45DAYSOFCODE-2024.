@@ -1,0 +1,16 @@
+def predict_winner(T, test_cases):
+    results = []
+    for N in test_cases:
+        if N % 2 == 0:
+            results.append("ALICE")
+        else:
+            results.append("BOB")
+    return results
+
+T = int(input())
+test_cases = [int(input()) for _ in range(T)]
+
+
+winners = predict_winner(T, test_cases)
+for winner in winners:
+    print(winner)
