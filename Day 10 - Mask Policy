@@ -1,0 +1,13 @@
+def minimum_masks(N, A):
+    uninfected = N - A 
+    return min(A, uninfected)  
+
+
+def main():
+    T = int(input())  
+    for _ in range(T):
+        N, A = map(int, input().split())  
+        print(minimum_masks(N, A)) 
+
+if __name__ == "__main__":
+    main()
