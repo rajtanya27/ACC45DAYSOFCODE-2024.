@@ -1,0 +1,13 @@
+
+T = int(input())
+
+for _ in range(T):
+    N = int(input())
+    gestures = input().strip()
+
+    if 'I' in gestures:
+        print("INDIAN")
+    elif 'Y' in gestures:
+        print("NOT INDIAN")
+    else:
+        print("NOT SURE")
