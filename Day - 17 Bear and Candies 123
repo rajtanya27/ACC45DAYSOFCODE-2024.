@@ -1,0 +1,29 @@
+def find_winner(T, test_cases):
+    results = []
+    for A, B in test_cases:
+        total_candies = 1  
+        limak_candies, bob_candies = 0, 0
+        
+        while True:
+            if limak_candies + total_candies <= A:
+                limak_candies += total_candies
+            else:
+                results.append("Bob")
+                break
+            
+            total_candies += 1  
+            if bob_candies + total_candies <= B:
+                bob_candies += total_candies
+            else:
+                results.append("Limak")
+                break
+            
+            total_candies += 1 
+    return results
+
+T = int(input())
+test_cases = [tuple(map(int, input().split())) for _ in range(T)]
+results = find_winner(T, test_cases)
+for result in results:
+    print(result)
+
