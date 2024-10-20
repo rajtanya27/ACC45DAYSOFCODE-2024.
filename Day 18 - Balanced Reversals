@@ -1,0 +1,19 @@
+def smallest_binary_string(T, test_cases):
+    results = []
+    
+    for N, A in test_cases:
+        zero_count = A.count('0')
+        one_count = N - zero_count  
+        
+        smallest_string = '0' * zero_count + '1' * one_count
+        results.append(smallest_string)
+    
+    return results
+
+T = int(input())
+test_cases = [(int(input()), input().strip()) for _ in range(T)]
+
+results = smallest_binary_string(T, test_cases)
+for result in results:
+    print(result)
+
