@@ -1,0 +1,21 @@
+from collections import Counter
+
+def can_assign_groups(n, preferences):
+    freq = Counter(preferences) 
+    
+    for group_size, count in freq.items():
+        if count % group_size != 0:
+            return "NO"
+    return "YES"
+
+
+T = int(input())  
+results = []
+
+for _ in range(T):
+    N = int(input()) 
+    P = list(map(int, input().split())) 
+    results.append(can_assign_groups(N, P))
+
+
+print("\n".join(results))
