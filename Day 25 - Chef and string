@@ -1,0 +1,14 @@
+def total_skipped_strings(n, strings):
+    skipped = 0
+
+    for i in range(n - 1):
+        skipped += abs(strings[i] - strings[i + 1]) - 1
+    return skipped
+
+T = int(input())
+
+for _ in range(T):
+    N = int(input())
+    strings = list(map(int, input().split()))
+    result = total_skipped_strings(N, strings)
+    print(result)
