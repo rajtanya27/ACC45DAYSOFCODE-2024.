@@ -1,0 +1,32 @@
+#include <iostream>
+#include <vector>
+using namespace std;
+
+int main() {
+    int T;  // Number of test cases
+    cin >> T;
+
+    while (T--) {
+        int N, K;
+        cin >> N >> K;  // N: Number of minions, K: Increment value
+
+        vector<int> characteristics(N);  // Store the minions' initial characteristic values
+        for (int i = 0; i < N; ++i) {
+            cin >> characteristics[i];
+        }
+
+        int wolverine_count = 0;  // Count of Wolverine-like minions
+
+        // Check each minion after transmogrification
+        for (int i = 0; i < N; ++i) {
+            int mutated_value = characteristics[i] + K;
+            if (mutated_value % 7 == 0) {
+                wolverine_count++;
+            }
+        }
+
+        cout << wolverine_count << endl;  // Output result for this test case
+    }
+
+    return 0;
+}
